@@ -1,24 +1,12 @@
-# README
+APPLICATION RESTAUCONNECT 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-Initialisation du projet avec Ruby on Rails
+   a. Créer une nouvelle application Rails 
+   b. Configurer la base de données
+-Mise en place de l'authentification des utilisateurs (Devise) 
+   
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
