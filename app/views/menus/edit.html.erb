@@ -1,0 +1,4 @@
+<h2>Edit Menu for <%= @restaurant.name %></h2>
+<%= render 'form', restaurant: @restaurant, menu: @menu %>
+<%= link_to 'Back', restaurant_menus_path(@restaurant), class: 'btn btn-default' %>
+

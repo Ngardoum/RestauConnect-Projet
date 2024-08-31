@@ -1,0 +1,25 @@
+<h2>Menus at <%= @restaurant.name %></h2>
+
+<div class="row">
+  <% @menus.each do |menu| %>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= menu.name %></h5>
+          <p class="card-text"><%= menu.description %></p>
+          <p class="card-text"><strong>Price:</strong> <%= number_to_currency(menu.price) %></p>
+          <%= form_with url: restaurant_orders_path(@restaurant), method: :post do |f| %>
+            <%= f.hidden_field :menu_id, value: menu.id %>
+            <div class="form-group">
+              <%= f.label :quantity %>
+              <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
+            </div>
+            <%= f.submit 'Add to Order', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-secondary' %>

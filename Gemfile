@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.3' 
 gem 'devise'
+gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails' # Nécessaire pour certaines fonctionnalités Bootstrap
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

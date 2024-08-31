@@ -1,0 +1,14 @@
+<h2>Order Details</h2>
+
+<p><strong>Restaurant:</strong> <%= @order.restaurant.name %></p>
+<p><strong>Status:</strong> <%= @order.status %></p>
+<p><strong>Total Price:</strong> <%= number_to_currency(@order.total_price) %></p>
+
+<h3>Items</h3>
+<ul>
+  <% @order.order_items.each do |item| %>
+    <li><%= item.menu.name %> x <%= item.quantity %> - <%= number_to_currency(item.price * item.quantity) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to Orders', orders_path, class: 'btn btn-secondary' %>

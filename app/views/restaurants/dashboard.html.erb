@@ -1,0 +1,28 @@
+<h1><%= @restaurant.name %> Dashboard</h1>
+
+<h2>Your Menus</h2>
+<%= link_to 'Add New Menu', new_restaurant_menu_path(@restaurant), class: 'btn btn-primary' %>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.name %></td>
+        <td><%= menu.description %></td>
+        <td><%= number_to_currency(menu.price) %></td>
+        <td>
+          <%= link_to 'Edit', edit_restaurant_menu_path(@restaurant, menu), class: 'btn btn-warning' %>
+          <%= link_to 'Delete', restaurant_menu_path(@restaurant, menu), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

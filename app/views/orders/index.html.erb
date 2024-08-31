@@ -1,0 +1,27 @@
+<h2>Your Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th>Status</th>
+      <th>Total Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.restaurant.name %></td>
+        <td><%= order.status %></td>
+        <td><%= number_to_currency(order.total_price) %></td>
+        <td>
+          <%= link_to 'View', order_path(order), class: 'btn btn-primary' %>
+          <%= link_to 'Delete', order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-secondary' %>

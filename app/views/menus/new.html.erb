@@ -1,0 +1,4 @@
+<h1>Add New Menu for <%= @restaurant.name %></h1>
+<%= render 'form', restaurant: @restaurant, menu: @menu %>
+<%= link_to 'Back to Dashboard', restaurant_dashboard_path(@restaurant), class: 'btn btn-default' %>
+
